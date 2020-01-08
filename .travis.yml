@@ -21,6 +21,7 @@ install:
   - npm install
 
 after_success:
+  - ng build --prod
   - firebase deploy --token $FIREBASE_TOKEN
 
 script:
