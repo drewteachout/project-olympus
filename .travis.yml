@@ -1,23 +1,27 @@
-dist: trusty
-sudo: false
+# dist: trusty
+# sudo: false
 
 language: node_js
 node_js:
   - '12'
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+# addons:
+#   apt:
+#     sources:
+#       - google-chrome
+#     packages:
+#       - google-chrome-stable
 
-cache:
-  directories:
-    - ./node_modules
+# cache:
+#   directories:
+#     - ./node_modules
 
 install:
   - npm install
+  - npm install -g firebase-tools
 
-script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+after_success:
+  - firebase deploy -- token $FIREBASE_TOKEN
+
+# script:
+#   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
