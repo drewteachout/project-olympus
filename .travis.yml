@@ -21,7 +21,7 @@ install:
   - npm install
 
 after_success:
-  - firebase deploy -- token $FIREBASE_TOKEN
+  - firebase deploy --token $FIREBASE_TOKEN
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
