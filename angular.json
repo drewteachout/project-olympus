@@ -81,11 +81,16 @@
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "configPath": "./tests/jest.config.js",
+            "no-cache": true,
+            "watch": true,
+            "verbose": true,
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": {
+              "test": "npx jest"
+            },
             "assets": [
               "src/favicon.ico",
               "src/assets"
