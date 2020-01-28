@@ -20,7 +20,7 @@ export class MainMenuComponent implements OnInit {
     {text: '', cols: 1, rows: 1, color: 'lightgreen'},
     {text: '', cols: 1, rows: 1, color: 'lightgreen'},
     {text: '', cols: 2, rows: 1, color: 'lightgreen'},
-  ]
+  ];
 
   constructor() { }
 
