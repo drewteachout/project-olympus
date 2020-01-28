@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MatGridListModule, MatButtonModule } from '@angular/material';
+
 import { MainMenuComponent } from './main-menu.component';
 
 describe('MainMenuComponent', () => {
@@ -8,7 +10,11 @@ describe('MainMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainMenuComponent ]
+      declarations: [ MainMenuComponent ],
+      imports: [
+        MatGridListModule,
+        MatButtonModule
+      ]
     })
     .compileComponents();
   }));

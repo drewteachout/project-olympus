@@ -1,5 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
+import { MatGridListModule, MatButtonModule } from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 
@@ -9,6 +11,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         MainMenuComponent
+      ],
+      imports: [
+        MatGridListModule,
+        MatButtonModule
       ]
     }).compileComponents();
   }));
