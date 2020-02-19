@@ -1,17 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+    <img width="114" src="../assets/images/mountain-15-114-260771.png">
+</div>
 <mat-grid-list cols="2" rowHeight="50px">
     <mat-grid-tile>
-        <button mat-stroked-button class="primary">My Games</button>
+        <button routerLink="/games" mat-stroked-button class="primary">My Games</button>
     </mat-grid-tile>
     <mat-grid-tile>
-        <button mat-stroked-button class="primary">My Teams</button>
+        <button routerLink="/teams" mat-stroked-button class="primary">My Teams</button>
     </mat-grid-tile>
     <mat-grid-tile>
-        <button mat-stroked-button class="primary">My Leagues</button>
+        <button routerLink="/leagues" mat-stroked-button class="primary">My Leagues</button>
     </mat-grid-tile>
     <mat-grid-tile>
-        <button mat-stroked-button class="primary">My Players</button>
+        <button routerLink="/players" mat-stroked-button class="primary">My Players</button>
     </mat-grid-tile>
     <mat-grid-tile colspan="2">
-        <button mat-stroked-button class="primary">Settings</button>
+        <button routerLink="/settings" mat-stroked-button class="primary">Settings</button>
     </mat-grid-tile>
 </mat-grid-list>
