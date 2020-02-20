@@ -1,40 +1,57 @@
-import { TestBed, async } from '@angular/core/testing';
-
+import { Location } from '@angular/common';
+import { NgZone } from '@angular/core';
+import { TestBed, async, fakeAsync } from '@angular/core/testing';
 import { MatGridListModule, MatButtonModule } from '@angular/material';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
+import { routes } from './app.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { MenuComponent } from './menu/menu.component';
+import { SettingsComponent } from './settings/settings.component';
 
 describe('AppComponent', () => {
+
+  let location: Location;
+  let ngZone: NgZone;
+  let router: Router;
+  let fixture;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        MainMenuComponent
+        MainMenuComponent,
+        MenuComponent,
+        SettingsComponent
       ],
       imports: [
         MatGridListModule,
-        MatButtonModule
+        MatButtonModule,
+        RouterTestingModule.withRoutes(routes)
       ]
     }).compileComponents();
+
+    router = TestBed.inject(Router);
+    location = TestBed.inject(Location);
+    ngZone = TestBed.inject(NgZone);
+    fixture = TestBed.createComponent(AppComponent);
+    ngZone.run(() =>
+      router.initialNavigation()
+    );
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'olympus'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Project Olympus');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Project Olympus!');
-  });
+  it('navigate to "" redirects you to /home', fakeAsync(() => {
+    ngZone.run(() =>
+      router.navigate(['']).then(() => {
+        expect(location.path()).toBe('/home');
+      })
+    );
+  }));
 });

@@ -9,14 +9,14 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'home', component: MainMenuComponent },
   // { path: 'games', component: GamesMenuComponent },
   // { path: 'leagues', component: LeaguesMenuComponent },
   // { path: 'players', component: PlayersMenuComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'teams', component: MenuComponent },
-  { path: '', 
+  { path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
