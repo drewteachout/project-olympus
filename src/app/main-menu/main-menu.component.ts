@@ -14,7 +14,7 @@ export interface Tile {
 })
 export class MainMenuComponent implements OnInit {
 
-  title: String = "Project Olympus";
+  title: String = 'Project Olympus';
 
   tiles: Tile[] = [
     {text: 'My Games', cols: 1, rows: 1, color: 'lightgreen'},

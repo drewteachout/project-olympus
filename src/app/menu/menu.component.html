@@ -1,1 +1,9 @@
-<p>menu works!</p>
+<mat-toolbar class="primary">
+    <span>
+        <button routerLink="/home" mat-stroked-button class="primary">Home</button>
+    </span>
+    <span class="center">{{title}}</span>
+    <span>
+        <button *ngIf="addEnabled" mat-stroked-button class="primary">Add</button>
+    </span>
+</mat-toolbar>
