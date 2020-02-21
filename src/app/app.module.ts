@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatGridListModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatToolbarModule
+} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatGridListModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { GamesMenuComponent } from './games/games-menu/games-menu.component';
@@ -12,7 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PlayersMenuComponent } from './players/players-menu/players-menu.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TeamsMenuComponent } from './teams/teams-menu/teams-menu.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AddLeagueComponent } from './leagues/add-league/add-league.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +33,17 @@ import { AppRoutingModule } from './app-routing.module';
     PlayersMenuComponent,
     GamesMenuComponent,
     PageNotFoundComponent,
-    LeaguesMenuComponent
+    LeaguesMenuComponent,
+    AddLeagueComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
+    MatFormFieldModule,
     MatGridListModule,
+    MatInputModule,
     MatToolbarModule,
     NoopAnimationsModule,
     AppRoutingModule

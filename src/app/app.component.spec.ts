@@ -1,12 +1,20 @@
 import { Location } from '@angular/common';
 import { NgZone } from '@angular/core';
 import { TestBed, async, fakeAsync } from '@angular/core/testing';
-import { MatGridListModule, MatButtonModule, MatToolbarModule, } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatGridListModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatToolbarModule
+} from '@angular/material';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { AppComponent } from './app.component';
 import { routes } from './app-routing.module';
+
+import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -15,6 +23,7 @@ import { PlayersMenuComponent } from './players/players-menu/players-menu.compon
 import { GamesMenuComponent } from './games/games-menu/games-menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LeaguesMenuComponent } from './leagues/leagues-menu/leagues-menu.component';
+import { AddLeagueComponent } from './leagues/add-league/add-league.component';
 
 describe('AppComponent', () => {
 
@@ -27,6 +36,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        AddLeagueComponent,
         MainMenuComponent,
         MenuComponent,
         SettingsComponent,
@@ -37,8 +47,12 @@ describe('AppComponent', () => {
         LeaguesMenuComponent
       ],
       imports: [
+        FormsModule,
+        ReactiveFormsModule,
         MatGridListModule,
         MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
         MatToolbarModule,
         RouterTestingModule.withRoutes(routes)
       ]

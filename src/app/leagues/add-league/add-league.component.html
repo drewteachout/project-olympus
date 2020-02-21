@@ -1,0 +1,10 @@
+<app-menu [title]="title" homeLink=".." [addEnabled]="false"></app-menu>
+<div class="container">
+    <form class="form">
+        <mat-form-field class="example-full-width">
+          <mat-label>League Name:</mat-label>
+          <input matInput placeholder="Please Enter League Name" [formControl]="name">
+        </mat-form-field>
+    </form>
+    <button mat-stroked-button>Create</button>
+</div>

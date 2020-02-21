@@ -1,9 +1,9 @@
 <mat-toolbar class="primary">
     <span>
-        <button routerLink="/home" mat-stroked-button class="primary">Home</button>
+        <button [routerLink]="homeLink" mat-stroked-button class="primary">Previous</button>
     </span>
     <span class="center">{{title}}</span>
-    <span>
-        <button *ngIf="addEnabled" mat-stroked-button class="primary">Add</button>
+    <span class="min-width">
+        <button *ngIf="addEnabled" [routerLink]="'create'" mat-stroked-button class="primary">Add</button>
     </span>
 </mat-toolbar>

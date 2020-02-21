@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { MenuComponent } from './menu.component';
 import { MatToolbarModule } from '@angular/material';
@@ -10,7 +12,7 @@ describe('MenuComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MenuComponent ],
-      imports: [ MatToolbarModule ]
+      imports: [ MatToolbarModule, RouterTestingModule ]
     })
     .compileComponents();
   }));
