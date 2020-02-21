@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayersMenuComponent } from './players-menu.component';
+import { MenuComponent } from 'src/app/menu/menu.component';
+import { MatToolbarModule } from '@angular/material';
 
 describe('PlayersMenuComponent', () => {
   let component: PlayersMenuComponent;
@@ -8,7 +10,8 @@ describe('PlayersMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlayersMenuComponent ]
+      declarations: [ PlayersMenuComponent, MenuComponent ],
+      imports: [ MatToolbarModule ]
     })
     .compileComponents();
   }));

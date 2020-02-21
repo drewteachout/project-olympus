@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { NgZone } from '@angular/core';
 import { TestBed, async, fakeAsync } from '@angular/core/testing';
-import { MatGridListModule, MatButtonModule } from '@angular/material';
+import { MatGridListModule, MatButtonModule, MatToolbarModule, } from '@angular/material';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -10,6 +10,11 @@ import { routes } from './app.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
+import { TeamsMenuComponent } from './teams/teams-menu/teams-menu.component';
+import { PlayersMenuComponent } from './players/players-menu/players-menu.component';
+import { GamesMenuComponent } from './games/games-menu/games-menu.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LeaguesMenuComponent } from './leagues/leagues-menu/leagues-menu.component';
 
 describe('AppComponent', () => {
 
@@ -24,11 +29,17 @@ describe('AppComponent', () => {
         AppComponent,
         MainMenuComponent,
         MenuComponent,
-        SettingsComponent
+        SettingsComponent,
+        TeamsMenuComponent,
+        PlayersMenuComponent,
+        GamesMenuComponent,
+        PageNotFoundComponent,
+        LeaguesMenuComponent
       ],
       imports: [
         MatGridListModule,
         MatButtonModule,
+        MatToolbarModule,
         RouterTestingModule.withRoutes(routes)
       ]
     }).compileComponents();
