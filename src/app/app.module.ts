@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatGridListModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,20 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PlayersMenuComponent } from './players/players-menu/players-menu.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TeamsMenuComponent } from './teams/teams-menu/teams-menu.component';
-
-export const routes: Routes = [
-  { path: 'home', component: MainMenuComponent },
-  { path: 'games', component: GamesMenuComponent },
-  { path: 'leagues', component: LeaguesMenuComponent },
-  { path: 'players', component: PlayersMenuComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'teams', component: TeamsMenuComponent },
-  { path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -46,10 +32,7 @@ export const routes: Routes = [
     MatGridListModule,
     MatToolbarModule,
     NoopAnimationsModule,
-    RouterModule.forRoot(
-      routes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

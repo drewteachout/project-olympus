@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
-import { routes } from './app.module';
+import { routes } from './app-routing.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
